@@ -31,7 +31,7 @@ export default function BlogDetail() {
           <article>
             <img src={article.imageUrl} alt={article.title} />
             <h1>{article.title}</h1>
-            <time>{article.publishedAt}</time>
+            <time>{new Date(article.publishedAt).toLocaleDateString()}</time>
             <p>{article.summary}</p>
             <p>
               <a href={article.url} target="_blank" rel="noreferrer">

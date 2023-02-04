@@ -19,7 +19,6 @@ export default function Blog() {
     }
     getArticles();
   }, []);
-
   return (
     <section>
       <h1>Blog</h1>
@@ -34,7 +33,10 @@ export default function Blog() {
                 <h2>
                   <Link to={`/blog/${article.id}`}>{article.title}</Link>
                 </h2>
-                <time>{article.publishedAt}</time>
+
+                <time>
+                  {new Date(article.publishedAt).toLocaleDateString()}
+                </time>
               </article>
             );
           })}
