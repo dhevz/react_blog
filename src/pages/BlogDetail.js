@@ -5,6 +5,7 @@ export default function BlogDetail() {
   const params = useParams();
   const [article, setArticle] = useState({});
   const [loading, setLoading] = useState(true);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(
     function () {
@@ -12,8 +13,14 @@ export default function BlogDetail() {
         const request = await fetch(
           `https://api.spaceflightnewsapi.net/v3/articles/${params.id}`
         );
+
+        if (!request.ok) {
+          setLoading(false);
+          return setNotFound(true);
+        }
         const response = await request.json();
 
+        document.title = response.title;
         setArticle(response);
         setLoading(false);
       }
@@ -22,18 +29,28 @@ export default function BlogDetail() {
     [params]
   );
 
+  if (notFound) {
+    return <h1>Article not Found</h1>;
+  }
+
   return (
-    <section>
+    <section className="section">
       {loading ? (
         <i>loading article</i>
       ) : (
         <>
-          <article>
-            <img src={article.imageUrl} alt={article.title} />
-            <h1>{article.title}</h1>
-            <time>{new Date(article.publishedAt).toLocaleDateString()}</time>
-            <p>{article.summary}</p>
-            <p>
+          <article className="article">
+            <img
+              src={article.imageUrl}
+              alt={article.title}
+              className="article-image"
+            />
+            <h1 className="article-title">{article.title}</h1>
+            <time className="article-time">
+              {new Date(article.publishedAt).toLocaleDateString()}
+            </time>
+            <p className="article-summary">{article.summary}</p>
+            <p className="article-source">
               <a href={article.url} target="_blank" rel="noreferrer">
                 {article.newsSite}
               </a>

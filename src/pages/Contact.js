@@ -1,8 +1,16 @@
+import {useEffect} from "react";
+
 export default function Contact() {
+  useEffect(function () {
+    document.title = "Contact";
+  }, []);
   return (
-    <section>
-      <h1> CONTACT</h1>
-      <p> Berikut adalah kontak saya yang dapat dihubungi</p>
+    <section className="section">
+      <h1 className="section-title"> CONTACT</h1>
+      <p className="section-description">
+        {" "}
+        Berikut adalah kontak saya yang dapat dihubungi
+      </p>
       <ul>
         <li>📧e-mail : devanialexandri1@gmail.com</li>
         <li>🟢whatsapp : +62895341028439</li>

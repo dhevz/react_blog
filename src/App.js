@@ -8,12 +8,23 @@ import BlogDetail from "./pages/BlogDetail";
 
 function App() {
   return (
-    <div className="App">
-      <nav>
-        <Link to="/">🏘️HOME</Link>
-        <Link to="/blog">🌐BLOG</Link>
-        <Link to="/profile">😃PROFILE</Link>
-        <Link to="/contact">📞CONTACT</Link>
+    <div className="app">
+      <div className="brand">
+        <h3>Website Dhevz</h3>
+      </div>
+      <nav className="nav">
+        <Link to="/" className="nav-item">
+          🏘️HOME
+        </Link>
+        <Link to="/blog" className="nav-item">
+          🌐BLOG
+        </Link>
+        <Link to="/profile" className="nav-item">
+          😃PROFILE
+        </Link>
+        <Link to="/contact" className="nav-item">
+          📞CONTACT
+        </Link>
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
