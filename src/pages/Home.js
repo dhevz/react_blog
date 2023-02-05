@@ -9,7 +9,8 @@ export default function Home() {
       <h1 className="section-title"> Selamat Datang di website Saya</h1>
       <p className="section-description">
         {" "}
-        Website ini merupakan informasi tentang SpaceX dan sedikit tentang saya
+        Website ini merupakan informasi tentang Space flight dan sedikit tentang
+        saya
       </p>
     </section>
   );
