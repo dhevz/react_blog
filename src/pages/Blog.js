@@ -24,7 +24,7 @@ export default function Blog() {
     <section className="section">
       <h1 className="section-title">Blog</h1>
       <p className="section-description">
-        Berikut Blog terbaru tentang SpaceX :
+        Berikut Blog terbaru tentang Space flight :
       </p>
 
       {loading && <i> loading article</i>}
